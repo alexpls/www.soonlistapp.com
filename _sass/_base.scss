@@ -33,6 +33,13 @@ body {
   display: table;
   width: 100%;
 
+  .explainer h1 .app-icon {
+    float: left;
+    height: 58px;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+
   .explainer, .phone-carousel {
     display: table-cell;
     width: 49%;
