@@ -18,7 +18,7 @@ body {
 
 .main {
   margin-top: 90px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
 
   .wrapper {
     margin: 0 auto;
@@ -44,6 +44,11 @@ body {
     display: table-cell;
     width: 49%;
     vertical-align: top;
+  }
+
+  .features-list {
+    list-style-type: disc;
+    margin-left: 20px;
   }
 
   .phone-carousel {
