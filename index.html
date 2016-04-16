@@ -45,12 +45,27 @@ layout: default
       </p>
 
       <p>
-        <strong>Not on your iPhone?</strong> Remind yourself to download Soonlist
-        via email: <small>(Don't worry, your address will only be used for this one time
-        reminder.)</small>
+        <strong>Not on your iPhone?</strong>
+        Not a worry. Send yourself a reminder to download Soonlist.
+        <small>
+          (Your email address will be used for a one-time email and then will be discarded).
+        </small>
       </p>
 
-      <input type="text" placeholder="Your email">
+      <form id="remind-myself">
+        <input type="text" placeholder="Your email address" name="email">
+        <button type="submit">Send</button>
+      </form>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  var form = document.forms['remind-myself'];
+  form.addEventListener('submit', function(event) {
+    // prevent the form from submitting, since we'll handle this behaviour ourselves
+    // in Javascript.
+    event.preventDefault();
+    console.log("Email submitted: ", form.email.value)
+  }, false);
+</script>
