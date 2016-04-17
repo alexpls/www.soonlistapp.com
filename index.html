@@ -59,13 +59,3 @@ layout: default
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  var form = document.forms['remind-myself'];
-  form.addEventListener('submit', function(event) {
-    // prevent the form from submitting, since we'll handle this behaviour ourselves
-    // in Javascript.
-    event.preventDefault();
-    console.log("Email submitted: ", form.email.value)
-  }, false);
-</script>
