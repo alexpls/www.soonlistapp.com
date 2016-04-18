@@ -3,14 +3,16 @@
 
   var form = document.forms['remind-myself'];
 
-  // if the reminder form doesn't exist on this page then don't bother trying
-  // to do antything with it.
-  if (!form) {
+  if (!form || userIsOnIphone()) {
     return;
   }
 
-  // Prevent the form from submitting, since we'll handle this behaviour ourselves
-  // in Javascript:
+  // Since the form is only really usable when JS is enabled, only show it once
+  // we know the browser is running JS.
+  form.classList.remove('hide');
+
+  // Prevent the form from submitting, since we'll handle this behaviour
+  // ourselves in Javascript:
   form.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -28,7 +30,6 @@
       console.log('Validation failed');
       emailInput.classList.add('invalid');
     }
-
   }, false);
 
   function isEmailValid(email) {
@@ -42,7 +43,10 @@
       body: [
         'Dear future me,',
         '',
-        'Please remember to download Soonlist for iPhone'
+        'Please remember to download Soonlist for iPhone',
+        '',
+        'Regards,',
+        'Past me'
       ].join('\n')
     };
 
@@ -63,5 +67,9 @@
     }
 
     return encodedParams.join('&');
+  }
+
+  function userIsOnIphone() {
+    return /i(Phone|Pod)/i.test(navigator.userAgent);
   }
 })();
