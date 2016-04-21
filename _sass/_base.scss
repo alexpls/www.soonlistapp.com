@@ -107,4 +107,28 @@ body {
       }
     }
   }
+
+  form#remind-myself {
+    input, button {
+      display: inline-block;
+      font-size: $scale / 1.5 * 1rem;
+    }
+
+    input {
+      border-radius: $border-radius;
+      border: 1px solid $border-color;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      outline: 0;
+      padding: 8px 8px;
+    }
+
+    button {
+      margin-left: -10px;
+      padding: 8px 8px;
+      border: 1px solid $border-color;
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
 }
