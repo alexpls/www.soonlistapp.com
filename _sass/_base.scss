@@ -1,9 +1,9 @@
 html, body {
   font-family: "Helvetica Neue", Arial, sans-serif;
+  color: white;
 }
 
 body {
-  background-color: $background-color;
 }
 
 .hide {
@@ -17,12 +17,11 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  background-image: linear-gradient($background-color 0%, #a370d3 100%);
+  background: linear-gradient(-80deg, $background-color, #4D628C);
 }
 
 .main {
   margin-top: 90px;
-  background-color: rgba(255, 255, 255, 0.9);
 
   .wrapper {
     margin: 0 auto;
@@ -47,7 +46,11 @@ body {
   .explainer, .phone-carousel {
     display: table-cell;
     width: 49%;
-    vertical-align: top;
+    vertical-align: middle;
+
+    h1 {
+      margin-top: 0;
+    }
   }
 
   .features-list {
@@ -59,28 +62,32 @@ body {
     overflow: hidden;
 
     .phone {
+      $ratio: 750 / 1334;
+      $height: 800px;
+      $width: $height * $ratio;
+
       float: right;
       margin-right: 20px;
-      width: 375px;
-      height: 667px;
+      width: $width;
+      height: $height;
       overflow: hidden;
       background: rgb(20, 20, 20);
 
       border: 1px solid #d3d3d3;
       box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
 
-      $translateX: -33px;
-      $translateY: 12px;
-      $perspective: 500px;
-      $rotateY: 8.3deg;
-      $scaleY: 1.1;
-      $scaleX: 1.04;
+      $translateX: 0;
+      $translateY: 0;
+      $perspective: 900px;
+      $rotateY: 6deg;
+      $scaleY: 0.9;
+      $scaleX: 0.85;
 
       transform: perspective($perspective) rotateY($rotateY) scale($scaleX, $scaleY) translate($translateX, $translateY);
 
       .images {
         position: relative;
-        width: 9999999px;
+        width: 99999px;
         height: 100%;
 
         transition: margin-left 500ms;
