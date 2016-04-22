@@ -76,16 +76,19 @@ footer {
     margin-left: 20px;
   }
 
+  $ratio: 750 / 1334;
+  $height: 700px;
+  $width: $height * $ratio;
+
+  .phone-container {
+    position: absolute;
+    height: 800px;
+  }
+
   .phone-carousel {
     overflow: hidden;
 
     .phone {
-      $ratio: 750 / 1334;
-      $height: 800px;
-      $width: $height * $ratio;
-
-      float: right;
-      margin-right: 20px;
       width: $width;
       height: $height;
       overflow: hidden;
@@ -94,14 +97,7 @@ footer {
       border: 1px solid #d3d3d3;
       box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
 
-      $translateX: 0;
-      $translateY: 0;
-      $perspective: 900px;
-      $rotateY: 6deg;
-      $scaleY: 0.9;
-      $scaleX: 0.85;
-
-      transform: perspective($perspective) rotateY($rotateY) scale($scaleX, $scaleY) translate($translateX, $translateY);
+      transform: perspective(500px) skewY(3.2deg) rotateY(4.1deg) scale(0.72, 0.849) translate(-1px, 54px);
 
       .images {
         position: relative;
