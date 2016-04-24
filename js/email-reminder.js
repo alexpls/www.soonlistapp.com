@@ -2,6 +2,8 @@
   'use strict';
 
   var form = document.forms['remind-myself'];
+  var emailInput = form.email;
+  var submitButton = form.submit;
 
   if (!form || userIsOnIphone()) {
     return;
@@ -11,26 +13,33 @@
   // we know the browser is running JS.
   form.classList.remove('hide');
 
+  disableSendButton();
+
   // Prevent the form from submitting, since we'll handle this behaviour
   // ourselves in Javascript:
   form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    var emailInput = form.email;
     var submittedEmail = emailInput.value;
 
     console.log("Email submitted: ", submittedEmail);
 
     if (isEmailValid(submittedEmail)) {
       console.log('Validation was successful');
-      form.parentElement.removeChild(form);
+      emailInput.value = '';
       document.location.href = makeMailToSchemeURL(submittedEmail);
 
     } else {
-      console.log('Validation failed');
-      emailInput.classList.add('invalid');
+      console.log('Validation unsuccessful');
+      form.getElementsByClassName('input-with-error')[0].classList.add('showing-error');
     }
   }, false);
+
+  emailInput.addEventListener('keyup', disableSendButton, false);
+
+  function disableSendButton() {
+    submitButton.disabled = emailInput.value.length === 0;
+  }
 
   function isEmailValid(email) {
     return /.+\@.+\..+/gi.test(email);
