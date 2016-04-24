@@ -33,6 +33,7 @@
     left: 400px;
     width: 500px;
     padding-left: 20px;
+    padding-top: 120px;
   }
 
   .phone-wrapper {
@@ -156,6 +157,14 @@
 
   .download-links {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    .app-logo {
+      $logo-height: 48px;
+      height: $logo-height;
+      width: $logo-height;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
   }
 
   @media (max-width: $breakpoint-tablet) {
