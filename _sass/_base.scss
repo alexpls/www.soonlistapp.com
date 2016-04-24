@@ -41,29 +41,51 @@ footer {
 .main {
   margin-top: 90px;
 
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
   .wrapper {
     margin: 0 auto;
-    width: 80%;
-    max-width: 1200px;
+    width: 900px;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .main .wrapper {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+$height: 700px;
+$container-height: 800px;
+$ratio: 750 / 1334;
+$width: $height * $ratio;
+
+.home {
+  .phone-wrapper, .phone-container {
+    height: $container-height;
+  }
+
+  .phone-carousel .phone {
+    width: $width;
+    height: $height;
   }
 }
 
 .home {
   @include clearfix;
 
+  position: relative;
   display: table;
   width: 100%;
 
-  .explainer h1 .app-icon {
-    float: left;
-    height: 58px;
-    border-radius: 10px;
-    margin-right: 10px;
-  }
-
-  .explainer, .phone-carousel {
+  .explainer, .phone-wrapper {
+    position: relative;
     display: table-cell;
-    width: 49%;
     vertical-align: middle;
 
     h1 {
@@ -71,18 +93,24 @@ footer {
     }
   }
 
+  .explainer {
+    left: 400px;
+    width: 500px;
+    padding-left: 20px;
+  }
+
+  .phone-wrapper {
+    left: -500px;
+    width: 400px;
+  }
+
   .features-list {
     list-style-type: disc;
     margin-left: 20px;
   }
 
-  $ratio: 750 / 1334;
-  $height: 700px;
-  $width: $height * $ratio;
-
   .phone-container {
     position: absolute;
-    height: 800px;
   }
 
   .phone-container, .phone-phone {
@@ -93,8 +121,6 @@ footer {
     overflow: hidden;
 
     .phone {
-      width: $width;
-      height: $height;
       overflow: hidden;
       background: rgb(20, 20, 20);
 
@@ -120,6 +146,84 @@ footer {
           }
         }
       }
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    & {
+      display: block;
+      width: 100%;
+    }
+
+    .explainer, .phone-wrapper {
+      position: static;
+      display: block;
+      width: 100%;
+      min-width: 275px;
+      vertical-align: top;
+      padding: 0;
+    }
+
+    .explainer h1 {
+      font-size: 38px;
+    }
+
+    .phone-wrapper {
+      position: relative;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      height: 440px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .phone-container {
+      position: relative;
+    }
+
+    .phone-carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin: 0 auto;
+
+      .phone {
+        margin: 0 auto;
+        position:relative;
+        left:15px
+      }
+    }
+  }
+
+  @media (max-width: 415px) {
+    .phone-wrapper {
+      height: 280px;
+    }
+
+    .phone-container {
+      width: 250px;
+      height: auto;
+    }
+
+    $height: 477px;
+    $width: $height * $ratio;
+
+    .phone-carousel .phone {
+      width: $width;
+      height: $height;
+      transform: perspective(500px) skewY(3.8deg) rotateY(4.1deg) scale(0.72, 0.851) translate(-8px, 40px);
+    }
+  }
+
+  .download-links {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    .download-links {
+      text-align: center;
     }
   }
 

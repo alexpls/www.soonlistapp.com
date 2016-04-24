@@ -5,6 +5,13 @@
   var emailInput = form.email;
   var submitButton = form.submit;
 
+  if (userIsOnIphone()) {
+    var notOnIphoneElems = document.getElementsByClassName('not-on-iphone');
+    [].forEach.call(notOnIphoneElems, function(elem) {
+      elem.parentNode.removeChild(elem);
+    });
+  }
+
   if (!form || userIsOnIphone()) {
     return;
   }
