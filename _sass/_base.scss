@@ -1,134 +1,84 @@
 html, body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   color: white;
+  height: 100%;
 }
 
 body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: linear-gradient(-80deg, $background-color, #4D628C);
+}
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-80deg, $background-color, #4D628C);
+  z-index: -1;
+}
+
+footer {
+  margin-top: 20px;
+
+  p {
+    color: $text-muted-color;
+
+    a, a:active, a:visited {
+      color: $text-muted-color;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    padding: 0;
+    margin: 0 auto;
+    max-width: 500px;
+
+    text-align: center;
+    font-size: 70%;
+    line-height: 18px;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    & {
+      margin-top: 0;
+      padding: 20px 10px;
+      max-width: 100%;
+
+      p {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+  }
 }
 
 .hide {
   display: none;
 }
 
-.background-gradient {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background: linear-gradient(-80deg, $background-color, #4D628C);
-}
-
 .main {
   margin-top: 90px;
 
-  .wrapper {
-    margin: 0 auto;
-    width: 80%;
-    max-width: 1200px;
-  }
-}
-
-.home {
-  @include clearfix;
-
-  display: table;
-  width: 100%;
-
-  .explainer h1 .app-icon {
-    float: left;
-    height: 58px;
-    border-radius: 10px;
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: 20px;
+    margin-left: 10px;
     margin-right: 10px;
   }
 
-  .explainer, .phone-carousel {
-    display: table-cell;
-    width: 49%;
-    vertical-align: middle;
-
-    h1 {
-      margin-top: 0;
-    }
+  .wrapper {
+    margin: 0 auto;
+    width: 900px;
   }
+}
 
-  .features-list {
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-
-  .phone-carousel {
-    overflow: hidden;
-
-    .phone {
-      $ratio: 750 / 1334;
-      $height: 800px;
-      $width: $height * $ratio;
-
-      float: right;
-      margin-right: 20px;
-      width: $width;
-      height: $height;
-      overflow: hidden;
-      background: rgb(20, 20, 20);
-
-      border: 1px solid #d3d3d3;
-      box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
-
-      $translateX: 0;
-      $translateY: 0;
-      $perspective: 900px;
-      $rotateY: 6deg;
-      $scaleY: 0.9;
-      $scaleX: 0.85;
-
-      transform: perspective($perspective) rotateY($rotateY) scale($scaleX, $scaleY) translate($translateX, $translateY);
-
-      .images {
-        position: relative;
-        width: 99999px;
-        height: 100%;
-
-        transition: margin-left 500ms;
-
-        img {
-          float: left;
-          height: 100%;
-          width: auto;
-
-          transform: scale(0.95);
-          transition: transform 250ms;
-
-          &.active {
-            transform: scale(1);
-          }
-        }
-      }
-    }
-  }
-
-  form#remind-myself {
-    input, button {
-      display: inline-block;
-      font-size: $scale / 1.5 * 1rem;
-    }
-
-    input {
-      border-radius: $border-radius;
-      border: 1px solid $border-color;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      outline: 0;
-      padding: 8px 8px;
-    }
-
-    button {
-      margin-left: -10px;
-      padding: 8px 8px;
-      border: 1px solid $border-color;
-      border-top-right-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
-    }
+@media (max-width: $breakpoint-tablet) {
+  .main .wrapper {
+    margin: 0;
+    width: 100%;
   }
 }
