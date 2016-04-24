@@ -8,5 +8,7 @@ url: "https://soonlistapp.com"
 
 markdown: kramdown
 
+exclude: [vendor, script]
+
 app_store_id: 1041801201
 app_store_link: https://geo.itunes.apple.com/us/app/soonlist-upcoming-movie-info/id1041801201?mt=8
