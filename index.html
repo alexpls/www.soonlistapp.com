@@ -45,21 +45,20 @@ layout: default
       </form>
 
       <p>
-        <a href="{{ site.app_store_link }}" target="_blank" alt="Download from the App Store"><img src="/assets/images/app-store-badge@2x.png" height="50" alt="Download from the App Store"></a>
-        <a href="{{ site.app_store_link }}" target="_blank" alt="Download from the App Store"><img src="/assets/images/app-icon@2x.png" class="app-logo" alt="Soonlist logo"></a>
+        <a href="{{ site.app_store_link }}" target="_blank" alt="Download from the App Store"><img src="{% asset_path 'app-store-badge@1x.png' %}" srcset="{% asset_path 'app-store-badge@1x.png' %} 1x, {% asset_path 'app-store-badge@2x.png' %} 2x" class="app-store-badge" alt="Download from the App Store"></a>
+        <a href="{{ site.app_store_link }}" target="_blank" alt="Download from the App Store"><img src="{% asset_path 'app-icon@1x.png' %}" srcset="{% asset_path 'app-icon@1x.png' %} 1x, {% asset_path 'app-icon@2x.png' %} 2x" class="app-logo" alt="Soonlist logo"></a>
       </p>
     </div>
   </div>
 
   <aside class="phone-wrapper">
-    <img class="phone-container" src="/assets/images/vert-phone.png" alt="Soonlist screenshot" role="presentation">
+    <img class="phone-container" src="{% asset_path 'vert-phone@1x.png' %}" srcset="{% asset_path 'vert-phone@1x.png' %} 1x, {% asset_path 'vert-phone@2x.png' %} 2x" alt="Soonlist screenshot" role="presentation">
     <div class="phone-carousel">
       <div class="phone">
         <div class="images">
-          <img src="/assets/images/app-screenshots/main-screen@2x.png" class="active" alt="Soonlist screenshot">
-          <img src="/assets/images/app-screenshots/movie-screen@2x.png" alt="Soonlist screenshot">
-          <img src="/assets/images/app-screenshots/reminder-popover@2x.png" alt="Soonlist screenshot">
-          <img src="/assets/images/app-screenshots/releases-screen@2x.png" alt="Soonlist screenshot">
+          <img src="{% asset_path 'app-screenshots/main-screen@1x.jpg' %}" srcset="{% asset_path 'app-screenshots/main-screen@1x.jpg' %} 1x, {% asset_path 'app-screenshots/main-screen@2x.jpg' %} 2x" class="active" alt="Soonlist screenshot">
+          <img src="{% asset_path 'app-screenshots/movie-screen@1x.jpg' %}" srcset="{% asset_path 'app-screenshots/movie-screen@1x.jpg' %} 1x, {% asset_path 'app-screenshots/movie-screen@2x.jpg' %} 2x" alt="Soonlist screenshot">
+          <img src="{% asset_path 'app-screenshots/reminder-popover@1x.jpg' %}" srcset="{% asset_path 'app-screenshots/reminder-popover@1x.jpg' %} 1x, {% asset_path 'app-screenshots/reminder-popover@2x.jpg' %} 2x" alt="Soonlist screenshot">
         </div>
       </div>
     </div>

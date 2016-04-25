@@ -8,6 +8,7 @@
 
   .phone-wrapper, .phone-container {
     height: $container-height;
+    width: 364px;
   }
 
   .phone-carousel .phone {
@@ -157,6 +158,10 @@
 
   .download-links {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    .app-store-badge {
+      height: 50px;
+    }
 
     .app-logo {
       $logo-height: 48px;
