@@ -7,7 +7,7 @@ if [ $TRAVIS_BRANCH != "master" ]; then
   exit 0
 fi
 
-GH_PAGES_PATH="$TRAVIS_BUILD_DIR/../../gh_pages_repo"
+GH_PAGES_PATH="$TRAVIS_BUILD_DIR/../gh_pages_repo"
 
 git clone \
   "https://${GH_ACCESS_TOKEN}@${GH_PAGES_PRODUCTION_REF}" \
@@ -20,8 +20,8 @@ git checkout gh-pages
 git config user.name 'Alex Plescan'
 git config user.email 'alexpls@gmail.com'
 
-rsync --exclude ".git" --recursive --checksum --delete "$TRAVIS_BUILD_DIR/" "$GH_PAGES_PATH/"
+rsync --exclude ".git" --recursive --checksum --delete "$TRAVIS_BUILD_DIR/_site/" "$GH_PAGES_PATH/"
 
-git add .
+git add -a .
 git commit --allow-empty -m "Auto-update gh-pages from master branch"
 git push --force --quiet > /dev/null 2>&1
