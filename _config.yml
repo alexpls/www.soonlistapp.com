@@ -18,6 +18,9 @@ assets:
     browsers: ["last 2 versions", "> 5%", "IE9"]
   assets:
     - "*.png"
+  compress:
+    css: true
+    js: true
 
 gems:
   - jekyll-assets

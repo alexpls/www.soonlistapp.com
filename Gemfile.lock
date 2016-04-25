@@ -82,6 +82,8 @@ GEM
       ethon (>= 0.8.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uglifier (3.0.0)
+      execjs (>= 0.3.0, < 3)
     yell (2.0.6)
 
 PLATFORMS
@@ -93,6 +95,7 @@ DEPENDENCIES
   jekyll-assets
   mini_magick
   octopress-autoprefixer
+  uglifier
 
 BUNDLED WITH
    1.11.2
