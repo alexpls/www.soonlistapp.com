@@ -10,6 +10,14 @@ body {
   background: linear-gradient(-80deg, $background-color, #4D628C);
 }
 
+a, a:visited {
+  color: white;
+
+  &:hover {
+    color: rgb(230, 230, 230);
+  }
+}
+
 .background-gradient {
   position: fixed;
   top: 0;
