@@ -11,9 +11,10 @@
     var numSlides = slides.length;
     var numSlidesLoaded = 0;
     var currentSlideIdx = 0;
-    var slideWidth = slides[0].width;
 
     function nextSlide() {
+      var slideWidth = slides[0].width;
+
       currentSlideIdx++;
 
       if (currentSlideIdx > slides.length-1) {
@@ -37,7 +38,6 @@
     function loadedSlide() {
       numSlidesLoaded++;
       if (numSlidesLoaded === numSlides) {
-        slideWidth = slides[0].width;
         setInterval(nextSlide, MS_PER_SLIDE - MS_FOR_ANIM);
       }
     }
