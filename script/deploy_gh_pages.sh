@@ -22,6 +22,6 @@ git config user.email 'alexpls@gmail.com'
 
 rsync --exclude ".git" --recursive --checksum --delete "$TRAVIS_BUILD_DIR/_site/" "$GH_PAGES_PATH/"
 
-git add -a .
+git add --all .
 git commit --allow-empty -m "Auto-update gh-pages from master branch"
 git push --force --quiet > /dev/null 2>&1
