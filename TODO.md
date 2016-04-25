@@ -3,9 +3,7 @@ Copy:
   - Add meta description, title
   - Look up other SEO tags... do they need to be added in?
 
-Images:
-  - Compile 2x and 1x variants of images, ideally automatically on site build
-
 Misc:
-  - Compile down javascripts
-  - Add in proper vendor prefixes in CSS
+  - Add in download link to email template
+  - Figure out why sometimes the slideshow doesn't start in Safari
+  - Add in fallback image for browsers that don't support CSS transforms
