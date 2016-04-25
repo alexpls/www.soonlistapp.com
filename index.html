@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+---
 
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-itunes-app" content="app-id=1041801201">
-
-  <title>Soonlist for iPhone - Upcoming movie release tracker and reminders</title>
-  <meta name="description" content="Soonlist is an iPhone app that helps you stay up to date with the upcoming movies you're interested in
-">
-
-  <link type="text/css" rel="stylesheet" href="/assets/main.css">
-</head>
-
-
-  <body>
-
-    
-
-    <div class="background-gradient"></div>
-
-    <div class="main">
-      <div class="wrapper">
-        <div class="home">
+<div class="home">
   <div class="explainer">
     <h1>Soonlist for iPhone</h1>
 
@@ -66,43 +45,22 @@
       </form>
 
       <p>
-        <a href="https://geo.itunes.apple.com/us/app/soonlist-upcoming-movie-info/id1041801201?mt=8" target="_blank" alt="Download from the App Store"><img src="/assets/app-store-badge@1x.png" srcset="/assets/app-store-badge@1x.png 1x, /assets/app-store-badge@2x.png 2x" class="app-store-badge" alt="Download from the App Store"></a>
-        <a href="https://geo.itunes.apple.com/us/app/soonlist-upcoming-movie-info/id1041801201?mt=8" target="_blank" alt="Download from the App Store"><img src="/assets/app-icon@1x.png" srcset="/assets/app-icon@1x.png 1x, /assets/app-icon@2x.png 2x" class="app-logo" alt="Soonlist logo"></a>
+        <a href="{{ site.app_store_link }}" target="_blank" alt="Download from the App Store"><img src="{% asset_path 'app-store-badge@1x.png' %}" srcset="{% asset_path 'app-store-badge@1x.png' %} 1x, {% asset_path 'app-store-badge@2x.png' %} 2x" class="app-store-badge" alt="Download from the App Store"></a>
+        <a href="{{ site.app_store_link }}" target="_blank" alt="Download from the App Store"><img src="{% asset_path 'app-icon@1x.png' %}" srcset="{% asset_path 'app-icon@1x.png' %} 1x, {% asset_path 'app-icon@2x.png' %} 2x" class="app-logo" alt="Soonlist logo"></a>
       </p>
     </div>
   </div>
 
   <aside class="phone-wrapper">
-    <img class="phone-container" src="/assets/vert-phone@1x.png" srcset="/assets/vert-phone@1x.png 1x, /assets/vert-phone@2x.png 2x" alt="Soonlist screenshot" role="presentation">
+    <img class="phone-container" src="{% asset_path 'vert-phone@1x.png' %}" srcset="{% asset_path 'vert-phone@1x.png' %} 1x, {% asset_path 'vert-phone@2x.png' %} 2x" alt="Soonlist screenshot" role="presentation">
     <div class="phone-carousel">
       <div class="phone">
         <div class="images">
-          <img src="/assets/app-screenshots/main-screen@1x.jpg" srcset="/assets/app-screenshots/main-screen@1x.jpg 1x, /assets/app-screenshots/main-screen@2x.jpg 2x" class="active" alt="Soonlist screenshot">
-          <img src="/assets/app-screenshots/movie-screen@1x.jpg" srcset="/assets/app-screenshots/movie-screen@1x.jpg 1x, /assets/app-screenshots/movie-screen@2x.jpg 2x" alt="Soonlist screenshot">
-          <img src="/assets/app-screenshots/reminder-popover@1x.jpg" srcset="/assets/app-screenshots/reminder-popover@1x.jpg 1x, /assets/app-screenshots/reminder-popover@2x.jpg 2x" alt="Soonlist screenshot">
+          <img src="{% asset_path 'app-screenshots/main-screen@1x.jpg' %}" srcset="{% asset_path 'app-screenshots/main-screen@1x.jpg' %} 1x, {% asset_path 'app-screenshots/main-screen@2x.jpg' %} 2x" class="active" alt="Soonlist screenshot">
+          <img src="{% asset_path 'app-screenshots/movie-screen@1x.jpg' %}" srcset="{% asset_path 'app-screenshots/movie-screen@1x.jpg' %} 1x, {% asset_path 'app-screenshots/movie-screen@2x.jpg' %} 2x" alt="Soonlist screenshot">
+          <img src="{% asset_path 'app-screenshots/reminder-popover@1x.jpg' %}" srcset="{% asset_path 'app-screenshots/reminder-popover@1x.jpg' %} 1x, {% asset_path 'app-screenshots/reminder-popover@2x.jpg' %} 2x" alt="Soonlist screenshot">
         </div>
       </div>
     </div>
   </aside>
 </div>
-
-      </div>
-    </div>
-
-    <footer>
-  <p>
-    Soonlist &copy; 2016 by
-    <a href="https://alexplescan.com">Alex Plescan</a>
-  </p>
-  <p>
-    iPhone is a trademark of Apple Inc., registered in the U.S. and other countries.<br>
-    App Store is a service mark of Apple Inc.
-  </p>
-</footer>
-
-<script type="text/javascript" src="/assets/main.js"></script>
-
-
-  </body>
-
-</html>

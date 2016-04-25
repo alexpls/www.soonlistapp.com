@@ -1,0 +1,7 @@
+_site
+.sass-cache
+.asset-cache
+.jekyll-metadata
+
+.DS_Store
+gh_pages_repo

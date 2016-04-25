@@ -1,0 +1,276 @@
+.home {
+  @include clearfix;
+
+  $height: 700px;
+  $container-height: 800px;
+  $ratio: 750 / 1334;
+  $width: $height * $ratio;
+
+  .phone-wrapper, .phone-container {
+    height: $container-height;
+    width: 364px;
+  }
+
+  .phone-carousel .phone {
+    width: $width;
+    height: $height;
+  }
+
+  position: relative;
+  display: table;
+  width: 100%;
+
+  .explainer, .phone-wrapper {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+
+    h1 {
+      margin-top: 0;
+    }
+  }
+
+  .explainer {
+    left: 400px;
+    width: 500px;
+    padding-left: 20px;
+    padding-top: 120px;
+  }
+
+  .phone-wrapper {
+    left: -500px;
+    width: 400px;
+  }
+
+  .features-list {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+
+  .phone-container {
+    position: absolute;
+  }
+
+  .phone-container, .phone-phone {
+    pointer-events: none;
+  }
+
+  .phone-carousel {
+    overflow: hidden;
+
+    .phone {
+      overflow: hidden;
+      background: rgb(20, 20, 20);
+
+      transform: perspective(500px) skewY(3.4deg) rotateY(4.1deg) scale(0.72, 0.851) translate(0px, 56px);
+
+      .images {
+        position: relative;
+        width: 99999px;
+        height: 100%;
+
+        transition: margin-left 500ms;
+
+        img {
+          float: left;
+          height: 100%;
+          width: auto;
+
+          transform: scale(0.95);
+          transition: transform 250ms;
+
+          &.active {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    & {
+      display: block;
+      width: 100%;
+    }
+
+    .explainer, .phone-wrapper {
+      position: static;
+      display: block;
+      width: 100%;
+      min-width: 275px;
+      vertical-align: top;
+      padding: 0;
+    }
+
+    .explainer h1 {
+      font-size: 38px;
+    }
+
+    .phone-wrapper {
+      position: relative;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      height: 440px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      box-sizing: border-box;
+    }
+
+    .phone-container {
+      position: relative;
+    }
+
+    .phone-carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin: 0 auto;
+
+      .phone {
+        margin: 0 auto;
+        position:relative;
+        left:15px
+      }
+    }
+  }
+
+  @media (max-width: 415px) {
+    .phone-wrapper {
+      height: 280px;
+    }
+
+    .phone-container {
+      width: 250px;
+      height: auto;
+    }
+
+    $height: 477px;
+    $width: $height * $ratio;
+
+    .phone-carousel .phone {
+      width: $width;
+      height: $height;
+      transform: perspective(500px) skewY(3.8deg) rotateY(4.1deg) scale(0.72, 0.851) translate(-8px, 40px);
+    }
+  }
+
+  .download-links {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    .app-store-badge {
+      height: 50px;
+    }
+
+    .app-logo {
+      $logo-height: 48px;
+      height: $logo-height;
+      width: $logo-height;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    .download-links {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+
+  form#remind-myself {
+    input, button {
+      display: inline-block;
+      font-size: $scale / 1.5 * 1rem;
+    }
+
+    input {
+      z-index: 2;
+      border-radius: $border-radius;
+      border: 1px solid $border-color;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      outline: 0;
+      padding: 8px 8px;
+    }
+
+    button {
+      z-index: 2;
+      cursor: pointer;
+      box-sizing: border-box;
+      background: white;
+      color: $primary-color;
+      font-weight: bold;
+      font-size: 14px;
+      margin-left: -10px;
+      padding: 10px 12px;
+      padding-bottom: 9px;
+      border: 1px solid $border-color;
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+
+      transition: background 200ms, color 200ms;
+
+      &:disabled {
+        background: #efefef;
+        color: #8e8cd9;
+        cursor: not-allowed;
+      }
+    }
+
+    .input-with-error {
+      display: inline-block;
+      vertical-align: top;
+
+      .error {
+        margin-top: -26px;
+
+        z-index: 0;
+
+        position: relative;
+
+        padding: 4px 2px;
+        padding-top: 6px;
+        margin-left: 2px;
+        margin-right: 2px;
+
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+
+        background: rgb(201, 6, 4);
+
+        border-bottom-right-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+
+        border: 1px solid rgb(160, 0, 0);
+
+        transition: margin 100ms;
+      }
+
+      input, button {
+        position: relative;
+      }
+
+      &.showing-error {
+        .error {
+          margin-top: -6px;
+        }
+
+        input, button {
+          border-color: rgb(160, 0, 0);
+        }
+
+        input {
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+
+        button {
+          border-bottom-right-radius: 0;
+        }
+      }
+    }
+  }
+}
