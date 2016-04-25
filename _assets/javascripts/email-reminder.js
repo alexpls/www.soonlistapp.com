@@ -59,9 +59,11 @@
       body: [
         'Dear future me,',
         '',
-        'Please remember to download Soonlist for iPhone',
+        'Please remember to download Soonlist for iPhone, it\'s the app that reminds you when your favourite movies are coming out!',
         '',
-        'Regards,',
+        'http://appstore.com/soonlistupcomingmovieinfoandreminders',
+        '',
+        'Take care of yourself,',
         'Past me'
       ].join('\n')
     };
